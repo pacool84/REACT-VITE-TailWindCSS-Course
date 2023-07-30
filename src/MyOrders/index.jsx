@@ -1,7 +1,8 @@
 import React from "react";
+import Layout from "../Components/Layout";
 
 function MyOrders() {
-  return <h1>Hello my friend MyOrders component</h1>;
+  return <Layout>My Orders</Layout>;
 }
 
 export default MyOrders;

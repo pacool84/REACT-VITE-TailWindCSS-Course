@@ -1,7 +1,7 @@
 import React from "react";
-
+import Layout from "../Components/Layout";
 function NotFound() {
-  return <h1>Hello my friend NotFound component</h1>;
+  return <Layout>Not Found</Layout>;
 }
 
 export default NotFound;

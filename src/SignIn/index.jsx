@@ -1,7 +1,7 @@
 import React from "react";
-
+import Layout from "../Components/Layout";
 function SignIn() {
-  return <h1>Hello my friend SignIn component</h1>;
+  return <Layout>Sign In</Layout>;
 }
 
 export default SignIn;
