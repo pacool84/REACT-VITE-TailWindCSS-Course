@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 
-const Card = ({ name, images, title, price }) => {
+const Card = ({ category: { name }, images, title, price }) => {
   /* context podria ser cualquier nombre */
   const context = useContext(ShoppingCartContext);
   return (
