@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../Components/Layout";
 import Card from "../Components/Card";
+import ProductDetail from "../Components/ProductDetail";
 
 const url = "https://api.escuelajs.co/api/v1/products";
 
@@ -31,6 +32,7 @@ function Home() {
           return <Card key={item.id} {...item} />;
         })}
       </div>
+      <ProductDetail />
     </Layout>
   );
 }
