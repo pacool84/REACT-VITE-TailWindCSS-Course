@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
+  console.log("Producto con detalles ", context.productToShow);
   return (
     <aside
       className={`${context.isProductDetailOpen ? "flex" : "hidden"}
@@ -21,6 +22,18 @@ const ProductDetail = () => {
           />
         </div>
       </div>
+      <figure>
+        <img
+          className="w-full h-full rounded-lg"
+          src={context.productToShow.images[0]}
+          alt={context.productToShow.title}
+        />
+      </figure>
+      <p>
+        <span>${context.productToShow.price}</span>
+        <span>{context.productToShow.title}</span>
+        {/* <span>{context.productToShow.category.name}</span> */}
+      </p>
     </aside>
   );
 };
