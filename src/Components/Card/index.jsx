@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 import { PlusIcon } from "@heroicons/react/24/solid";
 
-const Card = ({ category: { name }, images, title, price }) => {
+const Card = ({ category: { name }, images, title, price, description }) => {
   /* context podria ser cualquier nombre */
   const context = useContext(ShoppingCartContext);
 
@@ -14,7 +14,12 @@ const Card = ({ category: { name }, images, title, price }) => {
     <div
       className=" bg-white cursor-pointer w-56 h-60 rounded-lg "
       onClick={() =>
-        handleProductDetail({ category: { name }, images, title, price })
+        handleProductDetail({
+          images,
+          title,
+          price,
+          description,
+        })
       }
     >
       <figure className=" relative mb-2 w-full h-4/5 ">

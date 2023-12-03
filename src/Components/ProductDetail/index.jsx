@@ -15,24 +15,32 @@ const ProductDetail = () => {
         <h2 className="font-medium text-xl p-6">Detail</h2>
         <div>
           <XMarkIcon
-            className="h-6 w-6 text-black"
+            className="h-6 w-6 text-black cursor-pointer"
             onClick={() => {
               context.closeProductDetail();
             }}
           />
         </div>
       </div>
-      <figure>
+      <figure className="px-6">
         <img
           className="w-full h-full rounded-lg"
-          src={context.productToShow.images[0]}
+          src={
+            context.productToShow.images ? context.productToShow.images[0] : ""
+          }
           alt={context.productToShow.title}
         />
       </figure>
-      <p>
-        <span>${context.productToShow.price}</span>
-        <span>{context.productToShow.title}</span>
-        {/* <span>{context.productToShow.category.name}</span> */}
+      <p className="flex flex-col p-6">
+        <span className="font-medium text-2xl mb-2">
+          ${context.productToShow.price}
+        </span>
+        <span className="font-medium text-md">
+          {context.productToShow.title}
+        </span>
+        <span className="font-ligth text-sm">
+          {context.productToShow.description}
+        </span>
       </p>
     </aside>
   );
