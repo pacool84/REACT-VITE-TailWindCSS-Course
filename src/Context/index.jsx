@@ -20,6 +20,9 @@ export const ShoppingCartProvider = ({ children }) => {
   /* Product Detail - Show Product */
   const [productToShow, setProductToShow] = useState({});
 
+  /* Cart Products */
+  const [cartProduct, setCardProducts] = useState([]);
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -30,6 +33,8 @@ export const ShoppingCartProvider = ({ children }) => {
         isProductDetailOpen,
         productToShow,
         setProductToShow,
+        cartProduct,
+        setCardProducts,
       }}
     >
       {children}
