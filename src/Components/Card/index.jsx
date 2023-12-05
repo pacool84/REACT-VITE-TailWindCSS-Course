@@ -11,13 +11,16 @@ const Card = ({ category: { name }, images, title, price, description }) => {
     context.setProductToShow(productInfo);
   };
 
-  const addProductToCart = (productData) => {
+  const addProductToCart = (event, productData) => {
+    event.stopPropagation();
     context.setCount(context.count + 1);
     context.setCartProducts([
       ...context.cartProducts,
       productData,
     ]); /* Con el spread operator hacemos que mantenga los productos que ya habian sido agregados y aumente un nuevo producto */
-    console.log("Cart: ", context.cartProducts);
+    context.openCheckoutSideMenu();
+    context.closeProductDetail();
+    console.log("CART: ", context.cartProducts);
   };
 
   return (
@@ -43,8 +46,8 @@ const Card = ({ category: { name }, images, title, price, description }) => {
         />
         <div
           className=" absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1 "
-          onClick={() =>
-            addProductToCart({
+          onClick={(event) =>
+            addProductToCart(event, {
               images,
               title,
               price,

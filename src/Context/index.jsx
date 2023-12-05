@@ -17,11 +17,22 @@ export const ShoppingCartProvider = ({ children }) => {
     setIsProductDetailOpen(false);
   };
 
+  /* Checkout Side Menu Open/Close */
+  const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
+
+  const openCheckoutSideMenu = () => {
+    setIsCheckoutSideMenuOpen(true);
+  };
+
+  const closeCheckoutSideMenu = () => {
+    setIsCheckoutSideMenuOpen(false);
+  };
+
   /* Product Detail - Show Product */
   const [productToShow, setProductToShow] = useState({});
 
   /* Cart Products */
-  const [cartProduct, setCardProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
 
   return (
     <ShoppingCartContext.Provider
@@ -33,8 +44,11 @@ export const ShoppingCartProvider = ({ children }) => {
         isProductDetailOpen,
         productToShow,
         setProductToShow,
-        cartProduct,
-        setCardProducts,
+        cartProducts,
+        setCartProducts,
+        isCheckoutSideMenuOpen,
+        openCheckoutSideMenu,
+        closeCheckoutSideMenu,
       }}
     >
       {children}
