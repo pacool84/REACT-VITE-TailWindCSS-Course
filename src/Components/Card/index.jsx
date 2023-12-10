@@ -20,7 +20,6 @@ const Card = ({ category: { name }, images, title, price, description }) => {
     ]); /* Con el spread operator hacemos que mantenga los productos que ya habian sido agregados y aumente un nuevo producto */
     context.openCheckoutSideMenu();
     context.closeProductDetail();
-    console.log("CART: ", context.cartProducts);
   };
 
   return (
