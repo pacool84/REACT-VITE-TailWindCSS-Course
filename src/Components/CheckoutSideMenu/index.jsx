@@ -11,7 +11,7 @@ const CheckoutSideMenu = () => {
   return (
     <aside
       className={`${context.isCheckoutSideMenuOpen ? "flex" : "hidden"}
-      checkout-side-menu scrollable-cards flex-col fixed right-0 border border-black rounded-lg bg-white `}
+      checkout-side-menu flex-col fixed right-0 border border-black rounded-lg bg-white `}
     >
       <div className="flex justify-between items-center p-6 ">
         {/* Corregir el p-6 en el component ProductDetail */}
@@ -25,7 +25,7 @@ const CheckoutSideMenu = () => {
           />
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-6 overflow-y-scroll ">
         {context.cartProducts.map((product) => (
           <OrderCard
             key={product.id}
