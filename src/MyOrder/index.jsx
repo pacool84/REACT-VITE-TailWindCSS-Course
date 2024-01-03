@@ -7,6 +7,10 @@ import OrderCard from "../Components/OrderCard";
 
 function MyOrder() {
   const context = useContext(ShoppingCartContext);
+  const currentPath = window.location.pathname; //Leemos la URL actual en el navegador
+  let index = currentPath.substring(currentPath.lastIndexOf("/") + 1); //Obtenemos el index de la ruta de la orden
+
+  if (index === "last") index = context.order?.length - 1;
   return (
     <Layout>
       <div className="flex w-80 items-center relative justify-center mb-6">
@@ -16,7 +20,7 @@ function MyOrder() {
         <h1>My Order</h1>
       </div>{" "}
       <div className="flex flex-col w-80">
-        {context.order?.slice(-1)[0].products.map(
+        {context.order?.[index]?.products.map(
           (
             product //Aqui solo queremos renderizar la ultima porcion de la orden
           ) => (
