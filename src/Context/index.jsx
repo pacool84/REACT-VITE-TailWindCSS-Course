@@ -59,6 +59,23 @@ export const ShoppingCartProvider = ({ children }) => {
   const [searchByTitle, setSearchByTitle] = useState(null);
   console.log("searchByTitle: ", searchByTitle);
 
+  /* Filtrado de items */
+
+  const [filteredItems, setFilteredItems] = useState(null);
+
+  const filteredItemsByTitle = (items, searchByTitle) => {
+    return items?.filter((item) =>
+      item.title.toLowerCase().includes(searchByTitle.toLowerCase())
+    );
+  };
+
+  useEffect(() => {
+    if (searchByTitle)
+      setFilteredItems(filteredItemsByTitle(items, searchByTitle));
+  }, [items, searchByTitle]);
+
+  console.log("filteredItems: ", filteredItems);
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -80,6 +97,7 @@ export const ShoppingCartProvider = ({ children }) => {
         setItems,
         searchByTitle,
         setSearchByTitle,
+        filteredItems,
       }}
     >
       {children}
