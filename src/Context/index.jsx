@@ -55,6 +55,9 @@ export const ShoppingCartProvider = ({ children }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
+  /* Search By Title */
+  const [searchByTitle, setSearchByTitle] = useState(null);
+  console.log("searchByTitle: ", searchByTitle);
 
   return (
     <ShoppingCartContext.Provider
@@ -75,6 +78,8 @@ export const ShoppingCartProvider = ({ children }) => {
         setOrder,
         items,
         setItems,
+        searchByTitle,
+        setSearchByTitle,
       }}
     >
       {children}
