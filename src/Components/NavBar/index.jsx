@@ -10,12 +10,15 @@ const NavBar = () => {
     <nav className=" w-full flex justify-between items-center fixed top-0 z-10 py-5 px-8 text-sm font-light">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+          <NavLink to="/" onClick={() => context.setSearchByCategory()}>
+            Shopi
+          </NavLink>
         </li>
         <li>
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory()}
           >
             All
           </NavLink>
@@ -24,6 +27,7 @@ const NavBar = () => {
           <NavLink
             to="/clothes"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory("clothes")}
           >
             Clothes
           </NavLink>
@@ -32,6 +36,7 @@ const NavBar = () => {
           <NavLink
             to="/electronics"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory("electronics")}
           >
             Electronics
           </NavLink>
@@ -40,6 +45,7 @@ const NavBar = () => {
           <NavLink
             to="/furnitures"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory("furnitures")}
           >
             Furnitures
           </NavLink>
@@ -48,6 +54,7 @@ const NavBar = () => {
           <NavLink
             to="/toys"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory("toys")}
           >
             Toys
           </NavLink>
@@ -56,6 +63,7 @@ const NavBar = () => {
           <NavLink
             to="/others"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => context.setSearchByCategory("others")}
           >
             Others
           </NavLink>

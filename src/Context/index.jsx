@@ -69,12 +69,24 @@ export const ShoppingCartProvider = ({ children }) => {
     );
   };
 
+  console.log("filteredItems: ", filteredItems);
+
+  /* Filter by Category */
+  const [searchByCategory, setSearchByCategory] = useState(null);
+  console.log("searchByCategory: ", searchByCategory);
+
+  const filteredItemsByCategory = (items, searchByCategory) => {
+    return items?.filter((item) =>
+      item.category.name.toLowerCase().includes(searchByCategory.toLowerCase())
+    );
+  };
+
   useEffect(() => {
     if (searchByTitle)
       setFilteredItems(filteredItemsByTitle(items, searchByTitle));
-  }, [items, searchByTitle]);
-
-  console.log("filteredItems: ", filteredItems);
+    if (searchByCategory)
+      setFilteredItems(filteredItemsByCategory(items, searchByCategory));
+  }, [items, searchByTitle, searchByCategory]);
 
   return (
     <ShoppingCartContext.Provider
@@ -98,6 +110,8 @@ export const ShoppingCartProvider = ({ children }) => {
         searchByTitle,
         setSearchByTitle,
         filteredItems,
+        searchByCategory,
+        setSearchByCategory,
       }}
     >
       {children}
