@@ -8,8 +8,8 @@ import "./styles.css";
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext);
-  console.log("Producto con detalles ", context.productToShow);
-  console.log("CART: ", context.cartProducts);
+  /*   console.log("Producto con detalles ", context.productToShow);
+  console.log("CART: ", context.cartProducts); */
 
   const handleDelete = (id) => {
     const filteredProducts = context.cartProducts.filter(
@@ -25,7 +25,7 @@ const CheckoutSideMenu = () => {
       totalProducts: context.cartProducts.length,
       totalPrice: totalPrice(context.cartProducts),
     };
-    console.log("Estos son los datos", orderToAdd);
+    /* console.log("Estos son los datos", orderToAdd); */
     context.setOrder([...context.order, orderToAdd]); //Mantenemos lo que habia en order y agregamos lo nuevo
     context.setCartProducts([]);
   };

@@ -5,7 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
-  console.log("Producto con detalles ", context.productToShow);
+  /* console.log("Producto con detalles ", context.productToShow); */
   return (
     <aside
       className={`${context.isProductDetailOpen ? "flex" : "hidden"}
