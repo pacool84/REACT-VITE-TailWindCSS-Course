@@ -28,6 +28,7 @@ const CheckoutSideMenu = () => {
     /* console.log("Estos son los datos", orderToAdd); */
     context.setOrder([...context.order, orderToAdd]); //Mantenemos lo que habia en order y agregamos lo nuevo
     context.setCartProducts([]);
+    context.setSearchByTitle(null);
   };
   return (
     <aside
